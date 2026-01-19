@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   height: 100vh;
   overflow: hidden;
   color: white;
+  background: black;
 }
 
 /* Background */
@@ -20,91 +21,102 @@ body {
   z-index: -1;
 }
 
-/* Main content */
+/* Page transition (subtle) */
+.page-exit {
+  animation: pageExit 0.5s ease forwards;
+}
+
+@keyframes pageExit {
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+/* Layout */
 main {
-  position: absolute;
-  inset: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  transition: all 1.2s ease;
+  transition: all 1s ease;
 }
 
-/* Initial hidden state */
-.intro-hidden {
+.hero {
+  text-align: center;
+  transition: all 1s ease;
+}
+
+/* STATES */
+
+/* Initial hidden */
+.state-hidden .hero {
   opacity: 0;
   transform: translateY(30px);
 }
 
-/* Initial appear animation */
-.intro-visible {
+/* Centered visible */
+.state-center .hero {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Fade out */
-.intro-fadeout {
+.state-fadeout .hero {
   opacity: 0;
-  transform: scale(0.95);
+  transform: translateY(-20px);
 }
 
-/* Final arranged position */
-.intro-side {
-  opacity: 1;
+/* Side aligned reappear */
+.state-side {
   align-items: flex-start;
-  text-align: left;
-  padding-left: 6rem;
-  padding-top: 5rem;
+  padding-left: 80px;
+}
+
+.state-side .hero {
+  opacity: 1;
   transform: translateY(0);
+  text-align: left;
 }
 
 /* Typography */
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-.tagline {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-bottom: 2rem;
-}
+h1 { font-size: 3rem; }
+h2 { font-size: 1.6rem; font-weight: 300; margin-top: 0.5rem; }
+.tagline { margin-top: 1rem; opacity: 0.8; }
 
 .credits {
-  font-size: 0.9rem;
+  margin-top: 2rem;
   opacity: 0.7;
-  line-height: 1.5;
-  margin-bottom: 2.5rem;
+  line-height: 1.4;
 }
 
 .credits span {
-  letter-spacing: 2px;
   font-size: 0.75rem;
+  letter-spacing: 2px;
 }
 
 /* Button */
 .cta-button {
-  opacity: 0;
+  margin-top: 3rem;
   padding: 0.8rem 2rem;
   border: 1px solid rgba(255,255,255,0.5);
   background: transparent;
   color: white;
-  cursor: pointer;
   font-size: 0.9rem;
   letter-spacing: 2px;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.cta-button.hidden {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 .cta-button.show {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .cta-button:hover {

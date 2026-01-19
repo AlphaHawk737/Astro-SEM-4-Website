@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>Unveiling Dark Matter</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
 
-  <!-- Audio -->
-  <audio id="clickSound" src="assets/click.mp3" preload="auto"></audio>
+<audio id="clickSound" src="assets/click.mp3" preload="auto"></audio>
+<div class="background"></div>
 
-  <!-- Background -->
-  <div class="background"></div>
+<main id="home" class="state-hidden">
 
-  <!-- Content -->
-  <main id="home" class="intro-hidden">
+  <div class="hero">
     <h1>Unveiling Dark Matter:</h1>
     <h2>Evidence, Detection & Future Prospects</h2>
     <p class="tagline">Exploring the invisible structure of our universe</p>
@@ -26,10 +24,14 @@
       <p>Ishaandev Brahmakshatriya – 24BSP09</p>
       <p>Pushprajinh Rathod – 24BSP22</p>
     </div>
+  </div>
 
-    <button id="cta" class="cta-button">INTRODUCTION →</button>
-  </main>
+  <button id="cta" class="cta-button hidden" data-link="introduction.html">
+    INTRODUCTION →
+  </button>
 
-  <script src="script.js"></script>
+</main>
+
+<script src="home.js"></script>
 </body>
 </html>
