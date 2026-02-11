@@ -1,60 +1,75 @@
-const title = document.getElementById("introTitle");
-const clickSound = document.getElementById("clickSound");
 
-clickSound.volume = 0.4;
+/* TITLE ANIMATION */
 
-// unlock audio
-document.addEventListener("pointerdown", () => {
-  clickSound.play().then(() => {
-    clickSound.pause();
-    clickSound.currentTime = 0;
-  }).catch(() => {});
-}, { once: true });
 
-// title animation
-const text = title.textContent;
-title.textContent = "";
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.getElementById("introTitle");
 
-[...text].forEach((char, i) => {
-  const span = document.createElement("span");
-  span.textContent = char === " " ? "\u00A0" : char;
-  span.style.display = "inline-block";
-  span.style.opacity = "0";
-  span.style.transform = "scale(1.5)";
-  span.style.transition = "all 0.25s ease";
-  title.appendChild(span);
-
+  // Trigger title animation slightly after load
   setTimeout(() => {
-    span.style.opacity = "1";
-    span.style.transform = "scale(1)";
-  }, i * 45);
+    title.classList.add("show");
+  }, 300);
 });
 
-// scroll reveal
-const reveals = document.querySelectorAll(".reveal");
-const observer = new IntersectionObserver(
-  entries => {
+
+
+/* SCROLL REVEAL ANIMATION */
+
+
+const revealElements = document.querySelectorAll(".content-section");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        entry.target.style.filter = "blur(0)";
+        revealObserver.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.15 }
+  {
+    threshold: 0.15
+  }
 );
 
-reveals.forEach(el => observer.observe(el));
+// Initial hidden state
+revealElements.forEach(section => {
+  section.style.opacity = "0";
+  section.style.transform = "translateY(40px)";
+  section.style.filter = "blur(6px)";
+  section.style.transition = "all 0.8s ease";
 
-// navigation buttons
-document.querySelectorAll(".cta-button[data-link]").forEach(btn => {
+  revealObserver.observe(section);
+});
+
+
+/* NAVIGATION WITH PAGE EXIT TRANSITION */
+
+
+const buttons = document.querySelectorAll(".cta-button[data-link]");
+
+buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
 
-    document.body.classList.add("page-exit");
+    if (btn.classList.contains("disabled")) return;
+
+    document.body.style.transition = "all 0.5s ease";
+    document.body.style.opacity = "0";
+    document.body.style.transform = "scale(0.98)";
 
     setTimeout(() => {
       window.location.href = btn.dataset.link;
     }, 500);
   });
+});
+
+/* OPTIONAL: SUBTLE PARALLAX EFFECT */
+
+window.addEventListener("scroll", () => {
+  const offset = window.scrollY;
+  const bg = document.querySelector(".background");
+
+  bg.style.transform = `translateY(${offset * 0.15}px)`;
 });
