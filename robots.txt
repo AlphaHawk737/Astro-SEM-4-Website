@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chaipiyobiscuitkhao.space/sitemap.xml
