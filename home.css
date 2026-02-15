@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   color: white;
   background: black;
@@ -35,7 +35,7 @@ body {
 
 /* Layout */
 main {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,4 +126,31 @@ h2 { font-size: 1.6rem; font-weight: 300; margin-top: 0.5rem; }
 
 .cta-button:active {
   transform: scale(0.96);
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.2rem; }
+
+  .state-side {
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .state-side .hero {
+    text-align: center;
+  }
+
+  .cta-button {
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }

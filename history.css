@@ -264,3 +264,37 @@ body {
   }
 
 }
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  #historyTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .content {
+    padding-right: 0;
+    font-size: 0.95rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .hierarchy {
+    max-width: 100%;
+  }
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
