@@ -64,12 +64,3 @@ buttons.forEach(btn => {
     }, 500);
   });
 });
-
-/* OPTIONAL: SUBTLE PARALLAX EFFECT */
-
-window.addEventListener("scroll", () => {
-  const offset = window.scrollY;
-  const bg = document.querySelector(".background");
-
-  bg.style.transform = `translateY(${offset * 0.15}px)`;
-});

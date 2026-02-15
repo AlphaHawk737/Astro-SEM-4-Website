@@ -1,0 +1,266 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* BACKGROUND */
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("assets/stars.jpg") center / cover no-repeat;
+  filter: brightness(0.35);
+  z-index: -2;
+}
+
+/* Subtle overlay for depth */
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255,255,255,0.05),
+    transparent 60%
+  );
+  z-index: -1;
+}
+
+/* PAGE LAYOUT */
+
+
+.history-page {
+  min-height: 100vh;
+  padding: 100px 5vw 80px 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* TITLE */
+
+.history-header {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 60px;
+}
+
+#historyTitle {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+
+  /* Initial animation state */
+  opacity: 0;
+  transform: translateX(-40px);
+  filter: blur(4px);
+
+  transition: all 0.9s ease;
+}
+
+/* Activated by JS */
+#historyTitle.show {
+  opacity: 1;
+  transform: translateX(-20px);
+  filter: blur(0);
+}
+
+/* GLASS CONTENT PANEL */
+
+
+.content-panel {
+  width: 100%;
+  max-width: 1200px;
+
+  padding: 60px 60px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.05),
+    0 0 80px rgba(0,0,0,0.4);
+
+  position: relative;
+}
+
+/* Soft edge glow */
+.content-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  box-shadow: 0 0 60px rgba(255,255,255,0.05);
+}
+
+/* CONTENT STRUCTURE */
+
+
+.content-section {
+  margin-bottom: 70px;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+}
+
+/* TYPOGRAPHY */
+.content-section h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.content-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-top: 28px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+/* Decorative separator line */
+.content-section h3::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.content-section p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
+
+.content-section ul {
+  margin: 15px 0 20px 22px;
+}
+
+.content-section li {
+  margin-bottom: 10px;
+  color: #d6d6d6;
+}
+
+/* CONCEPT HIERARCHY BLOCK */
+
+
+.concept-hierarchy {
+  margin: 30px auto;
+  padding: 20px 25px;
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.concept-hierarchy .arrow {
+  opacity: 0.6;
+}
+
+/* NAVIGATION BUTTONS */
+
+
+.nav-buttons {
+  margin-top: 70px;
+  display: flex;
+  gap: 25px;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.cta-button:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: scale(0.96);
+}
+
+.cta-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* CUSTOM SCROLLBAR */
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+
+/* RESPONSIVE ADJUSTMENTS */
+
+@media (max-width: 900px) {
+
+  .content-panel {
+    padding: 40px 30px;
+  }
+
+  #historyTitle {
+    font-size: 2.4rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.6rem;
+  }
+
+}
