@@ -47,11 +47,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 500);
     });
   });
-
-  window.addEventListener("scroll", () => {
-    const offset = window.scrollY;
-    const bg = document.querySelector(".background");
-    bg.style.transform = `translateY(${offset * 0.15}px)`;
-  });
-
-});
