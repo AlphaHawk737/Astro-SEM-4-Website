@@ -1,44 +1,5 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background: black;
-  color: white;
-  overflow-x: hidden;
-}
-
-
-/* BACKGROUND */
-
-.background {
-  position: fixed;
-  inset: 0;
-  background: url("../assets/stars.jpg") center / cover no-repeat;
-  filter: brightness(0.35);
-  z-index: -2;
-}
-
-/* Subtle overlay for depth */
-.background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 30%,
-    rgba(255,255,255,0.05),
-    transparent 60%
-  );
-  z-index: -1;
-}
 
 /* PAGE LAYOUT */
 
@@ -80,38 +41,7 @@ body {
   filter: blur(0);
 }
 
-/* GLASS CONTENT PANEL */
 
-
-.content-panel {
-  width: 100%;
-  max-width: 1200px;
-
-  padding: 60px 60px;
-  border-radius: 16px;
-
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  box-shadow:
-    0 0 40px rgba(255,255,255,0.05),
-    0 0 80px rgba(0,0,0,0.4);
-
-  position: relative;
-}
-
-/* Soft edge glow */
-.content-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  pointer-events: none;
-  box-shadow: 0 0 60px rgba(255,255,255,0.05);
-}
 
 /* CONTENT STRUCTURE */
 
@@ -193,58 +123,7 @@ body {
   opacity: 0.6;
 }
 
-/* NAVIGATION BUTTONS */
 
-
-.nav-buttons {
-  margin-top: 70px;
-  display: flex;
-  gap: 25px;
-}
-
-.cta-button {
-  padding: 0.8rem 2rem;
-  border: 1px solid rgba(255,255,255,0.5);
-  background: transparent;
-  color: white;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: all 0.35s ease;
-}
-
-.cta-button:hover {
-  background: rgba(255,255,255,0.15);
-  transform: translateY(-2px);
-}
-
-.cta-button:active {
-  transform: scale(0.96);
-}
-
-.cta-button.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* CUSTOM SCROLLBAR */
-
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.3);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255,0.5);
-}
 
 
 /* RESPONSIVE ADJUSTMENTS */
@@ -295,7 +174,6 @@ body {
     max-width: 100%;
   }
 }
-button {
-  -webkit-tap-highlight-color: transparent;
-}
+
+
 

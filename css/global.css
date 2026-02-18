@@ -1,0 +1,169 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   GLOBAL BODY
+========================= */
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* =========================
+   BACKGROUND LAYER
+========================= */
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("../assets/stars.jpg") center / cover no-repeat;
+  filter: brightness(0.35);
+  z-index: -2;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255,255,255,0.05),
+    transparent 60%
+  );
+  z-index: -1;
+}
+
+/* =========================
+   GLASS PANEL
+========================= */
+
+.content-panel {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.05),
+    0 0 80px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.content-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  box-shadow: 0 0 60px rgba(255,255,255,0.05);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.8;
+  color: #cfcfcf;
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+
+.nav-buttons {
+  margin-top: 70px;
+  display: flex;
+  gap: 25px;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.cta-button:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: scale(0.96);
+}
+
+.cta-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cta-button.disabled:hover {
+  transform: none;
+  background: transparent;
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}

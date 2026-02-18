@@ -1,24 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "Segoe UI", sans-serif;
-  min-height: 100vh;
   overflow: hidden;
-  color: white;
-  background: black;
-}
-
-/* Background */
-.background {
-  position: fixed;
-  inset: 0;
-  background: url("../assets/stars.jpg") center/cover no-repeat;
-  filter: brightness(0.35);
-  z-index: -1;
 }
 
 /* Page transition */
@@ -83,7 +64,6 @@ main {
 /* Typography */
 h1 { font-size: 3rem; }
 h2 { font-size: 1.6rem; font-weight: 300; margin-top: 0.5rem; }
-.tagline { margin-top: 1rem; opacity: 0.8; }
 
 .credits {
   margin-top: 2rem;
@@ -149,8 +129,4 @@ h2 { font-size: 1.6rem; font-weight: 300; margin-top: 0.5rem; }
     width: 90%;
     max-width: 320px;
   }
-}
-
-button {
-  -webkit-tap-highlight-color: transparent;
 }
