@@ -69,3 +69,29 @@ window.addEventListener("pageshow", (event) => {
     document.body.classList.remove("page-exit");
   }
 });
+
+// Smooth scroll
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+
+//Reading Progress Bar Logic
+
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  const progressBar = document.querySelector(".progress-bar");
+
+  if (!progressBar || documentHeight <= 0) return;
+
+  const scrollPercent = (scrollTop / documentHeight) * 100;
+  progressBar.style.width = scrollPercent + "%";
+});
