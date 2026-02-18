@@ -64,3 +64,11 @@ buttons.forEach(btn => {
     }, 500);
   });
 });
+
+
+// Fix back-button black screen
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    document.body.classList.remove("page-exit");
+  }
+});

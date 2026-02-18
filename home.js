@@ -47,3 +47,10 @@ cta.addEventListener("click", () => {
     window.location.href = cta.dataset.link;
   }, 500);
 });
+
+// Fix back-button black screen
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    document.body.classList.remove("page-exit");
+  }
+});
