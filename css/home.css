@@ -16,7 +16,7 @@ body {
 .background {
   position: fixed;
   inset: 0;
-  background: url("assets/stars.jpg") center/cover no-repeat;
+  background: url("../assets/stars.jpg") center/cover no-repeat;
   filter: brightness(0.35);
   z-index: -1;
 }

@@ -1,5 +1,5 @@
-
 /* TITLE ANIMATION */
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 300);
 });
 
+const clickSound = document.getElementById("clickSound");
+clickSound.volume = 0.4;
+
+// Unlock audio on first interaction
+document.addEventListener("pointerdown", () => {
+  clickSound.play().then(() => {
+    clickSound.pause();
+    clickSound.currentTime = 0;
+  }).catch(() => {});
+}, { once: true });
 
 
 /* SCROLL REVEAL ANIMATION */
@@ -51,18 +61,21 @@ revealElements.forEach(section => {
 const buttons = document.querySelectorAll(".cta-button[data-link]");
 
 buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
+    btn.addEventListener("click", () => {
 
-    if (btn.classList.contains("disabled")) return;
+      if (btn.classList.contains("disabled")) return;
 
-    document.body.style.transition = "all 0.5s ease";
-    document.body.style.opacity = "0";
-    document.body.style.transform = "scale(0.98)";
+      clickSound.currentTime = 0;
+      clickSound.play();
 
-    setTimeout(() => {
-      window.location.href = btn.dataset.link;
-    }, 500);
-  });
+      document.body.style.transition = "all 0.5s ease";
+      document.body.style.opacity = "0";
+      document.body.style.transform = "scale(0.98)";
+
+      setTimeout(() => {
+        window.location.href = btn.dataset.link;
+      }, 500);
+    });
 });
 
 

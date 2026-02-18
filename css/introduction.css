@@ -22,7 +22,7 @@ body {
 .background {
   position: fixed;
   inset: 0;
-  background: url("assets/stars.jpg") center / cover no-repeat;
+  background: url("../assets/stars.jpg") center / cover no-repeat;
   filter: brightness(0.35);
   z-index: -2;
 }
@@ -43,7 +43,7 @@ body {
 /* PAGE LAYOUT */
 
 
-.history-page {
+.intro-page {
   min-height: 100vh;
   padding: 100px 5vw 80px 5vw;
   display: flex;
@@ -54,13 +54,13 @@ body {
 
 /* TITLE */
 
-.history-header {
+.intro-header {
   width: 100%;
   max-width: 1200px;
   margin-bottom: 60px;
 }
 
-#historyTitle {
+#introTitle {
   font-size: 3.2rem;
   font-weight: 700;
   color: #ffffff;
@@ -74,7 +74,7 @@ body {
 }
 
 /* Activated by JS */
-#historyTitle.show {
+#introTitle.show {
   opacity: 1;
   transform: translateX(-20px);
   filter: blur(0);
@@ -255,7 +255,7 @@ body {
     padding: 40px 30px;
   }
 
-  #historyTitle {
+  #introTitle {
     font-size: 2.4rem;
   }
 
@@ -265,10 +265,11 @@ body {
 
 }
 
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  #historyTitle {
+  #introTitle {
     font-size: 2rem;
     text-align: center;
   }

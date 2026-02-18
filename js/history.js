@@ -1,3 +1,14 @@
+const clickSound = document.getElementById("clickSound");
+clickSound.volume = 0.4;
+
+// Unlock audio
+document.addEventListener("pointerdown", () => {
+  clickSound.play().then(() => {
+    clickSound.pause();
+    clickSound.currentTime = 0;
+  }).catch(() => {});
+}, { once: true });
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const title = document.getElementById("historyTitle");
@@ -37,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
 
       if (btn.classList.contains("disabled")) return;
+
+      clickSound.currentTime = 0;
+      clickSound.play();
 
       document.body.style.transition = "all 0.5s ease";
       document.body.style.opacity = "0";
