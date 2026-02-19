@@ -107,4 +107,44 @@
   }
 }
 
+/* Scroll To Top Button */
+
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+
+  transition: opacity 0.3s ease,
+              transform 0.3s ease,
+              background 0.3s ease;
+  z-index: 1000;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#scrollTopBtn:hover {
+  background: rgba(255,255,255,0.18);
+}
 
