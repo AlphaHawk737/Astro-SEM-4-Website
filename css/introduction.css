@@ -216,3 +216,113 @@
 #scrollTopBtn:hover {
   background: rgba(255,255,255,0.18);
 }
+
+
+/* Images */
+
+.figure-composition {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-composition img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-composition-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+
+.figure-o-p {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-o-p img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-o-p-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+
+.figure-halo {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-halo img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-halo-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+
+.figure-cbm {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-cbm img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-cbm-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+
+.figure-xenon-detector {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-xenon-detector img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-xenon-detector-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+
+.figure-alt-theories {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-alt-theories img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-alt-theories-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
