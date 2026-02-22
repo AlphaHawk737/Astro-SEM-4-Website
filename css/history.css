@@ -148,3 +148,19 @@
   background: rgba(255,255,255,0.18);
 }
 
+.figure-coma-cluster {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-coma-cluster img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-coma-cluster-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
