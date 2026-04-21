@@ -11,7 +11,7 @@ document.addEventListener("pointerdown", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const title = document.getElementById("evidenceTitle");
+    const title = document.getElementById("detectionTitle");
 
     setTimeout(() => {
         title.classList.add("show");
