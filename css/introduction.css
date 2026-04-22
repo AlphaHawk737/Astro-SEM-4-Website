@@ -326,3 +326,21 @@
   opacity: 0.6;
   margin-top: 10px;
 }
+
+
+.figure-lensing {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.figure-lensing img {
+  max-width: 60%;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.figure-lensing-caption {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
